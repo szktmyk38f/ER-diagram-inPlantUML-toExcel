@@ -45,8 +45,9 @@ for line in lines:
         seq = 1
         continue
 
-    if '--' in line or '@startuml' in line or '@enduml' in line or \
-            '}|' in line or '}o' in line or '||' in line or '|{' in line or 'o{' in line or '||' in line:
+    if '--' in line or '@startuml' in line or '@enduml' in line or 'package' in line or 'skinparam' in line or \
+            '}|' in line or '}o' in line or '||' in line or '|{' in line or 'o{' in line or '||' in line or \
+    '!define' in line or 'hide ' in line:
         continue
 
     entity_index = line.find('entity')
