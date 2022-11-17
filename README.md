@@ -24,4 +24,4 @@ python excel.py
 
 Open `test.xlsx`.
 
-![image](https://user-images.githubusercontent.com/40861943/202475273-e62f6d4d-ecb9-4a50-8278-adcce0dc99c8.png)
+![image](https://user-images.githubusercontent.com/40861943/202486297-156334ef-208f-4211-b1d6-c833d406d8e8.png)
