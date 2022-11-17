@@ -22,7 +22,7 @@ end_ruled_line = 0
 
 for line in lines:
     # create header
-    if is_first and '{' in line:
+    if is_first and '{' in line and 'entity' in line:
         ws1['C' + str(7 + height)] = '#'
         ws1['D' + str(7 + height)] = 'PK'
         ws1['E' + str(7 + height)] = 'FK'
@@ -45,7 +45,8 @@ for line in lines:
         seq = 1
         continue
 
-    if '--' in line or '@startuml' in line or '@enduml' in line:
+    if '--' in line or '@startuml' in line or '@enduml' in line or \
+            '}|' in line or '}o' in line or '||' in line or '|{' in line or 'o{' in line or '||' in line:
         continue
 
     entity_index = line.find('entity')
