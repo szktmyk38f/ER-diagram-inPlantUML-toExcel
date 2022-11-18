@@ -1,3 +1,4 @@
+import sys
 import re
 import openpyxl
 from openpyxl.utils import get_column_letter
@@ -10,9 +11,9 @@ wb = openpyxl.Workbook()
 ws1 = wb.active
 ws1.title = 'Sheet1'
 
-
-test_data = open("test.pu", "r", encoding="utf-8_sig")
-lines = test_data.readlines()
+args = sys.argv
+pu_data = open(args[1], "r", encoding="utf-8_sig")
+lines = pu_data.readlines()
 
 height = 0
 is_first = True
@@ -109,7 +110,7 @@ for col in ws1.columns:
     adjusted_width = (max_length + 2) * 1.2
     ws1.column_dimensions[get_column_letter(column)].width = adjusted_width
 
-wb.save('test.xlsx')
+wb.save('output.xlsx')
 
 
-test_data.close()
+pu_data.close()
